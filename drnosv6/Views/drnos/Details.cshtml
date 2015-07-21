@@ -1,0 +1,331 @@
+﻿@model drnosv6.Models.Doctor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<br />
+<fieldset>
+    <legend>UsysDoctor</legend>
+
+    <div style="float:left; width:33%;">
+
+        <div class="display-label">
+            <b> RVH ID </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RVH_ID_)
+        </div>
+
+        <br>
+
+        <div class="display-label">
+            <b>NPI</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NPI)
+        </div>
+
+        <br>
+
+        <div class="display-label">
+            <b> On Staff </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.On_Staff)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b> Adm Priv </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AdmPriv)
+        </div>
+        <br />
+
+        <div class="display-label">
+            <b>Inactive</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Inactive)
+        </div>
+        <br />
+
+
+        <div class="display-label">
+            <b>License Verification Date</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.License_Verification_Date)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>  Last Name </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Last_Name)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>First Name</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.First_Name)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Middle Name</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Middle_Name)
+        </div>
+
+        <br />
+
+
+
+
+
+
+        <div class="display-label">
+            <b>Group</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Group)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b> Address </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Address)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>city</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.City)
+        </div>
+
+        <br />
+    </div>
+    <div style="float:left; width:33%;">
+
+        <div class="display-label">
+            <b>State</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.State)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Zip</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Zip)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Telephone</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Telephone)
+        </div>
+
+        <br />
+
+
+
+
+
+        <div class="display-label">
+            <b>
+                Fax
+            </b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Fax)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Physician Specialty</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Phys_Spclty)
+        </div>
+        <br />
+
+
+        <div class="display-label">
+            <b>License</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.License_)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>UPIN</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UPIN)
+        </div>
+
+        <br />
+
+
+
+        <div class="display-label">
+            <b>QCPR</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.QCPR)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Keane</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Keane)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Orsos</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Orsos)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>3M</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.C3M)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Soft</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Soft)
+        </div>
+
+        <br />
+    </div>
+
+    <div style="float:right; width:33%;">
+
+        <div class="display-label">
+            <b>DIC</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DIC)
+        </div>
+
+        <br />
+
+
+
+
+        <div class="display-label">
+            <b>Meta Link</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Metalink)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Open Med</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Open_Med)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Muse</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Muse)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Med Quest</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.MedQuest)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Degree 1</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Degree1)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Degree 2</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Degree2)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Degree 3</b>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Degree3)
+        </div>
+
+        <br />
+
+        <div class="display-label">
+            <b>Notes</b>
+        </div>
+       
+    </div>
+</fieldset>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DrNOSv2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Degrees">
+          <Key>
+            <PropertyRef Name="DegID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Degree" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="DegID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctors">
+          <Key>
+            <PropertyRef Name="RVH ID " />
+          </Key>
+          <Property Name="RVH ID " Type="int" Nullable="false" />
+          <Property Name="NPI" Type="nvarchar" MaxLength="255" />
+          <Property Name="On Staff" Type="bit" Nullable="false" />
+          <Property Name="AdmPriv" Type="bit" Nullable="false" />
+          <Property Name="Inactive" Type="bit" Nullable="false" />
+          <Property Name="License Verification Date" Type="nvarchar" MaxLength="255" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="First Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Middle Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Group" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="255" />
+          <Property Name="State" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phys Spclty" Type="nvarchar" MaxLength="255" />
+          <Property Name="License " Type="nvarchar" MaxLength="255" />
+          <Property Name="UPIN" Type="nvarchar" MaxLength="255" />
+          <Property Name="QCPR" Type="bit" Nullable="false" />
+          <Property Name="Keane" Type="bit" Nullable="false" />
+          <Property Name="Orsos" Type="bit" Nullable="false" />
+          <Property Name="3M" Type="bit" Nullable="false" />
+          <Property Name="Soft" Type="bit" Nullable="false" />
+          <Property Name="DIC" Type="bit" Nullable="false" />
+          <Property Name="Metalink" Type="bit" Nullable="false" />
+          <Property Name="Open Med" Type="bit" Nullable="false" />
+          <Property Name="Muse" Type="bit" Nullable="false" />
+          <Property Name="MedQuest" Type="bit" Nullable="false" />
+          <Property Name="Degree1" Type="nvarchar" MaxLength="255" />
+          <Property Name="Degree2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Degree3" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Specialty">
+          <Key>
+            <PropertyRef Name="SpecialtyID" />
+          </Key>
+          <Property Name="SpecialtyID" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SpecialtyAlias" Type="nvarchar" MaxLength="255" />
+          <Property Name="DescriptiveText" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="DrNOSv2ModelStoreContainer">
+          <EntitySet Name="Degrees" EntityType="Self.Degrees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specialty" EntityType="Self.Specialty" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DrNOSv2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="DegID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Degree1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DegID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="RVH_ID_" />
+          </Key>
+          <Property Name="RVH_ID_" Type="Int32" Nullable="false" />
+          <Property Name="NPI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="On_Staff" Type="Boolean" Nullable="false" />
+          <Property Name="AdmPriv" Type="Boolean" Nullable="false" />
+          <Property Name="Inactive" Type="Boolean" Nullable="false" />
+          <Property Name="License_Verification_Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="First_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Middle_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Group" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Phys_Spclty" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="License_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UPIN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QCPR" Type="Boolean" Nullable="false" />
+          <Property Name="Keane" Type="Boolean" Nullable="false" />
+          <Property Name="Orsos" Type="Boolean" Nullable="false" />
+          <Property Name="C3M" Type="Boolean" Nullable="false" />
+          <Property Name="Soft" Type="Boolean" Nullable="false" />
+          <Property Name="DIC" Type="Boolean" Nullable="false" />
+          <Property Name="Metalink" Type="Boolean" Nullable="false" />
+          <Property Name="Open_Med" Type="Boolean" Nullable="false" />
+          <Property Name="Muse" Type="Boolean" Nullable="false" />
+          <Property Name="MedQuest" Type="Boolean" Nullable="false" />
+          <Property Name="Degree1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Degree2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Degree3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Specialty">
+          <Key>
+            <PropertyRef Name="SpecialtyID" />
+          </Key>
+          <Property Name="SpecialtyID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SpecialtyAlias" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DescriptiveText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DrNOSv2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Degrees" EntityType="Self.Degree" />
+          <EntitySet Name="Doctors" EntityType="Self.Doctor" />
+          <EntitySet Name="Specialties" EntityType="Self.Specialty" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DrNOSv2ModelStoreContainer" CdmEntityContainer="DrNOSv2Entities">
+          <EntitySetMapping Name="Degrees">
+            <EntityTypeMapping TypeName="DrNOSv2Model.Degree">
+              <MappingFragment StoreEntitySet="Degrees">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Degree1" ColumnName="Degree" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DegID" ColumnName="DegID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="DrNOSv2Model.Doctor">
+              <MappingFragment StoreEntitySet="Doctors">
+                <ScalarProperty Name="RVH_ID_" ColumnName="RVH ID " />
+                <ScalarProperty Name="NPI" ColumnName="NPI" />
+                <ScalarProperty Name="On_Staff" ColumnName="On Staff" />
+                <ScalarProperty Name="AdmPriv" ColumnName="AdmPriv" />
+                <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+                <ScalarProperty Name="License_Verification_Date" ColumnName="License Verification Date" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle Name" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phys_Spclty" ColumnName="Phys Spclty" />
+                <ScalarProperty Name="License_" ColumnName="License " />
+                <ScalarProperty Name="UPIN" ColumnName="UPIN" />
+                <ScalarProperty Name="QCPR" ColumnName="QCPR" />
+                <ScalarProperty Name="Keane" ColumnName="Keane" />
+                <ScalarProperty Name="Orsos" ColumnName="Orsos" />
+                <ScalarProperty Name="C3M" ColumnName="3M" />
+                <ScalarProperty Name="Soft" ColumnName="Soft" />
+                <ScalarProperty Name="DIC" ColumnName="DIC" />
+                <ScalarProperty Name="Metalink" ColumnName="Metalink" />
+                <ScalarProperty Name="Open_Med" ColumnName="Open Med" />
+                <ScalarProperty Name="Muse" ColumnName="Muse" />
+                <ScalarProperty Name="MedQuest" ColumnName="MedQuest" />
+                <ScalarProperty Name="Degree1" ColumnName="Degree1" />
+                <ScalarProperty Name="Degree2" ColumnName="Degree2" />
+                <ScalarProperty Name="Degree3" ColumnName="Degree3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specialties">
+            <EntityTypeMapping TypeName="DrNOSv2Model.Specialty">
+              <MappingFragment StoreEntitySet="Specialty">
+                <ScalarProperty Name="SpecialtyID" ColumnName="SpecialtyID" />
+                <ScalarProperty Name="SpecialtyAlias" ColumnName="SpecialtyAlias" />
+                <ScalarProperty Name="DescriptiveText" ColumnName="DescriptiveText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

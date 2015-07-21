@@ -1,0 +1,175 @@
+﻿
+@model PagedList.IPagedList<drnosv6.Models.Doctor>
+
+@using PagedList.Mvc;
+
+
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Doctors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("Index", "drnos")) //insert the search bar
+{
+    
+    <p>
+        Find by First Name, Last Name, or RVH ID: @Html.TextBox("SearchString")
+
+        <input type="submit"  value="Search" />
+    </p>
+}
+
+    
+
+<script src="~/Scripts/angular.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () { 
+        $('tr:even').addClass('alt-row-class');
+    });
+    
+
+</script>
+
+<p>
+
+    <input type="button"  onclick="$('#doctorform').submit();" value="Save" />
+   
+</p>
+
+<p>Click on a column header to sort by that column</p>
+
+
+
+
+<table>
+
+    <tr>
+        <th>
+            @Html.ActionLink("RVH ID", "Index", new { sortOrder = ViewBag.IDSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.LastSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.FirstSortParm })
+        </th>
+        <th>
+            Middle Initial
+        </th>
+        <th>
+            Degree
+        </th>
+        <th>
+            Group
+        </th>
+        <th>
+            Adm Priv
+        </th>
+
+        <th>
+            @Html.ActionLink("QCPR", "Index", new { sortOrder = ViewBag.QCPRSortParm })
+
+        </th>
+        <th>
+            @Html.ActionLink("Keane", "Index", new { sortOrder = ViewBag.KeaneSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Orsos", "Index", new { sortOrder = ViewBag.OrsosSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Soft", "Index", new { sortOrder = ViewBag.SoftSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("3M", "Index", new { sortOrder = ViewBag.threeMSortParm })
+        </th>
+
+        <th></th>
+    </tr>
+
+ @using (Html.BeginForm("Save", "drnos",  FormMethod.Post, new { id = "doctorform" }))
+ {
+    
+
+     for (int i = 0; i < Model.Count; i++)
+     {
+
+            <tr>
+                <td>
+                    
+                    @Model[i].RVH_ID_
+                    @Html.HiddenFor(m => m[i].RVH_ID_)
+
+                </td>
+                <td>
+                    @Model[i].Last_Name
+                    @Html.HiddenFor(m => m[i].Last_Name)
+                </td>
+                <td>
+                    @Model[i].First_Name
+                    @Html.HiddenFor(m => m[i].First_Name)
+                </td>
+                <td>
+                    @Model[i].Middle_Name
+                    @Html.HiddenFor(m => m[i].Middle_Name)
+                </td>
+                <td>
+                    @Model[i].Degree1
+                    @Html.HiddenFor(m => m[i].Degree1)
+                </td>
+                <td>
+                    @Model[i].Group
+                    @Html.HiddenFor(m => m[i].Group)
+                </td>
+                <td>
+                    
+                    @Html.CheckBoxFor(m => m[i].AdmPriv)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m[i].QCPR)
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m[i].Keane)
+
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m[i].Orsos)
+
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m[i].Soft)
+
+                </td>
+                <td>
+                    @Html.CheckBoxFor(m => m[i].C3M)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = Model[@i].RVH_ID_ })  
+                    @Html.ActionLink("Details", "Details", new { id = Model[@i].RVH_ID_ })
+
+                </td>
+            </tr>
+     
+            }
+            
+            }
+
+        </table>
+
+     
+
+
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
