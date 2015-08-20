@@ -1144,7 +1144,6 @@
     <Content Include="Views\drnos\Create.cshtml" />
     <Content Include="Views\drnos\Edit.cshtml" />
     <Content Include="Views\drnos\Delete.cshtml" />
-    <Content Include="Views\drnos\SearchIndex.cshtml" />
     <Content Include="Views\search\Index.cshtml" />
     <Content Include="Views\search\Details.cshtml" />
     <Content Include="Views\search\Create.cshtml" />

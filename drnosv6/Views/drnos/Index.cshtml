@@ -17,11 +17,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@using (Html.BeginForm("Index", "drnos")) //insert the search bar
+@using (Html.BeginForm()) //insert the search bar
 {
     
     <p>
-        Find by First Name, Last Name, or RVH ID: @Html.TextBox("SearchString")
+        Find by First Name, Last Name, or RVH ID: @Html.TextBox("searchString")
 
         <input type="submit"  value="Search" />
     </p>
@@ -95,7 +95,7 @@
         <th></th>
     </tr>
 
- @using (Html.BeginForm("Save", "drnos",  FormMethod.Post, new { id = "doctorform" }))
+ @using (Html.BeginForm("save", "drnos",  FormMethod.Post, new { id = "doctorform" }))
  {
     
 

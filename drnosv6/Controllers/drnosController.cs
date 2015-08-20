@@ -47,12 +47,9 @@ namespace drnosv6.Controllers
 
             ViewBag.threeMSortParm = sortOrder == "3M" ? "3MDesc" : "3M";
 
-
             var doctors = from d in db.Doctors
                           select d;
 
-
-          
 
             if (searchString != null)
             {
@@ -65,6 +62,7 @@ namespace drnosv6.Controllers
 
             ViewBag.CurrentFilter = searchString;
 
+            
 
             if (!String.IsNullOrEmpty(searchString)) //creates the code for the search bar
             {
@@ -143,7 +141,7 @@ namespace drnosv6.Controllers
     
 
         [HttpPost]
-        public ActionResult Save(List<Doctor> drnos)
+        public ActionResult save(List<Doctor> drnos)
         {
            
             System.Diagnostics.Debug.WriteLine("Save Called");
